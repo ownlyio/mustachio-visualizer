@@ -69,6 +69,15 @@
       updateBannerVisibility();
     }
 
+    function CopyToClipboard(arg) {
+      var tempInput = document.createElement("input");
+      tempInput.value = arg;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);    
+    }
+
     var buildUrl = "Build";
     var loaderUrl = buildUrl + "/mustachio-visualizer.loader.js";
     var config = {
